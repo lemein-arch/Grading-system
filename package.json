@@ -1,0 +1,24 @@
+{
+  "name": "grading-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemein-arch/Grading-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lemein-arch/Grading-system/issues"
+  },
+  "homepage": "https://github.com/lemein-arch/Grading-system#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7",
+    "hbs": "^4.2.0"
+  }
+}
