@@ -18,6 +18,12 @@ app.get('/', (request, response) => {
     response.render('home');
 });
 
+// This is a RESTful GET web service
+app.get('/scores', (request, response) => {
+    data.sort((a, b) => (a.total < b.total) ? 1 : -1 );
+    response.send(data);
+});
+
 // This is a RESTful POST web service
 app.post('/process_scores', jsonParser, (request, response) => {
     const studentName = request.body.name;

@@ -4,6 +4,20 @@ var scoreOne;
 var scoreTwo;
 var total;
 
+
+async function fetchScores() {
+    const url = server + '/scores';
+    const options = {
+        method: 'GET',
+        headers: { 
+            'Accept' : 'application/json'
+        }
+    }
+    const response = await fetch(url, options);
+    const rows = await response.json();
+    populateContent(rows);
+}
+
 async function addStudentScores() {
     const url = server + '/process_scores';
     const scores = {name: studentName, score1: scoreOne, score2: scoreTwo};
@@ -20,12 +34,39 @@ async function addStudentScores() {
     if(text == "fail"){
         alert("Scores have to be a number");
     }
-    if(text == "success"){
-        alert("Scores have been succesfully added for student");
-    }
     if(text =="exists"){
         alert("Student name already exists");
     }
+}
+
+function populateContent(rows) {
+    var table = document.getElementById('content');
+    var numID = 1;
+    rows.forEach(row => {
+        var tuple = document.createElement('tr');
+        var id = document.createElement('td');
+        var idText = document.createTextNode(numID);
+        var data1 = document.createElement('td');
+        var nameText = document.createTextNode(row.name);
+        var data2 = document.createElement('td');
+        var score1Text = document.createTextNode(row.score1);
+        var data3 = document.createElement('td');
+        var score2Text = document.createTextNode(row.score2);
+        var data4 = document.createElement('td');
+        var totalText = document.createTextNode(row.total);
+        id.appendChild(idText);
+        data1.appendChild(nameText);
+        data2.appendChild(score1Text);
+        data3.appendChild(score2Text);
+        data4.appendChild(totalText);
+        tuple.appendChild(id);
+        tuple.appendChild(data1);
+        tuple.appendChild(data2);
+        tuple.appendChild(data3);
+        tuple.appendChild(data4);
+        table.appendChild(tuple);
+        numID++;
+    });
 }
 
 document.querySelector('form').addEventListener('submit', (e) => {
@@ -36,7 +77,8 @@ document.querySelector('form').addEventListener('submit', (e) => {
         scoreOne = parseInt(scoreOne);
         scoreTwo = parseInt(scoreTwo);
         addStudentScores();
+        fetchScores()
     }
     e.preventDefault();
-    $('form').get(0).reset(); // or $('form')[0].reset()
+    //$('form').get(0).reset(); // or $('form')[0].reset()
 });
