@@ -26,11 +26,11 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="score1" class="form-lbel">Quiz 1 score </label>
-                                    <input type="text" name="score1" class="form-control" step="any" id="score1">
+                                    <input type="number" name="score1" class="form-control" placeholder="Score Out of 30" min="0" max="30"  step="any" id="score1">
                                 </div>
                                 <div class="mb-3">
                                     <label for="score2" class="form-label">Quiz 2 score </label>
-                                    <input type="text" name="score2" class="form-control" step="any" id="score2">   
+                                    <input type="number" name="score2" class="form-control" placeholder="Score Out of 60" min="0" max="60"  step="any" id="score2">   
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="reset" class="btn btn-secondary">Clear</button>
@@ -43,14 +43,7 @@
             <section id="table">
                 <div class="p-5">
                     <table class="table table-success">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Student Name</th>
-                                <th scope="col">Quiz 1</th>
-                                <th scope="col">Quiz 2</th>
-                                <th scope="col">Total</th>
-                            </tr>
+                        <thead id="head">
                         </thead>
                         <tbody id="content" class="table-group-divider"></tbody>
                     </table>

@@ -35,10 +35,10 @@ app.post('/process_scores', jsonParser, (request, response) => {
             const i = data.findIndex(scores => scores.name === studentName);
             if(i === -1){
                 function calculateTotal() {
-                    total = (score1 + score2);
+                    total = (score1 + score2) / 90 * 100;
                     return total;
                 }
-                data.push({name: studentName, score1: score1, score2: score2, total: calculateTotal()});
+                data.push({name: studentName, score1: score1, score2: score2, total: parseInt(calculateTotal())});
                 response.send('success');
             }else {
                 response.send('exists');

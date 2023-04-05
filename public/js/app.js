@@ -40,7 +40,9 @@ async function addStudentScores() {
 }
 
 function populateContent(rows) {
+    var header = document.getElementById('head');
     var table = document.getElementById('content');
+    header.innerHTML = "<tr><th>#</th><th>Student Name</th><th>Quiz 1</th><th>Quiz 2</th><th>Total</th></tr>"
     var numID = 1;
     rows.forEach(row => {
         var tuple = document.createElement('tr');
@@ -77,8 +79,8 @@ document.querySelector('form').addEventListener('submit', (e) => {
         scoreOne = parseInt(scoreOne);
         scoreTwo = parseInt(scoreTwo);
         addStudentScores();
+        $("#content").html('');
         fetchScores()
     }
     e.preventDefault();
-    //$('form').get(0).reset(); // or $('form')[0].reset()
 });
