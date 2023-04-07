@@ -18,6 +18,34 @@ async function fetchScores() {
     populateContent(rows);
 }
 
+async function fetchMedian() {
+    const url = server + '/median';
+    const options = {
+        method: 'GET',
+        headers: {
+            'Accept' : 'application/json'
+        }
+    }
+
+    const response = await fetch(url, options);
+    const median = await response.json();
+    document.getElementById('median').innerHTML = median;
+}
+
+async function fetchAverage() {
+    const url = server + '/average';
+    const options = {
+        method: 'GET',
+        headers: {
+            'Accept' : 'application/json'
+        }
+    }
+
+    const response = await fetch(url, options);
+    const average = await response.json();
+    document.getElementById('average').innerHTML = average;
+}
+
 async function addStudentScores() {
     const url = server + '/process_scores';
     const scores = {name: studentName, score1: scoreOne, score2: scoreTwo};
@@ -37,6 +65,8 @@ async function addStudentScores() {
     if(text =="exists"){
         alert("Student name already exists");
     }
+    fetchMedian();
+    fetchAverage();
 }
 
 function populateContent(rows) {
@@ -84,3 +114,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
     }
     e.preventDefault();
 });
+
+fetchMedian();
+fetchAverage();

@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 const jsonParser = bodyParser.json();
 const fileName = 'scores.json';
+const { calculateTotal, median } = require('./calculations');
 
 // Load data from file
 let rawData = fs.readFileSync(fileName);
@@ -24,22 +25,43 @@ app.get('/scores', (request, response) => {
     response.send(data);
 });
 
+// Getting median scores
+app.get('/median', (request, response) => {
+    //Create array to store int values
+    let scores = [];
+
+    //Get time from data
+    let score  = data.map((item) => {
+        //append time to times[]
+        scores.push(item.total);
+    });
+    
+    medianScore = median(scores).toFixed(2);
+    response.send(medianScore.toString());
+});
+
+// Getting average of the totals
+app.get('/average', (request, response) => {
+    var sum = 0;
+    var size = Object.keys(data).length;
+    var average = 0;
+    for (var i=0; i<size; i++) {
+        sum += parseFloat(data[i].total);
+    }
+    average = (sum/size).toFixed(2);
+    response.send(average.toString());
+})
+
 // This is a RESTful POST web service
 app.post('/process_scores', jsonParser, (request, response) => {
     const studentName = request.body.name;
     const score1 = request.body.score1;
     const score2 = request.body.score2;
-    var total;
     if(studentName != null || Number.isInteger(score1) || Number.isInteger(score2)) {
         if(studentName){
             const i = data.findIndex(scores => scores.name === studentName);
             if(i === -1){
-                function calculateTotal() {
-                    total = (score1 + score2) / 90 * 100;
-                    return total;
-                }
-                data.push({name: studentName, score1: score1, score2: score2, total: parseInt(calculateTotal())});
-                response.send('success');
+                data.push({name: studentName, score1: score1, score2: score2, total: parseInt(calculateTotal(score1 , score2))});
             }else {
                 response.send('exists');
             }

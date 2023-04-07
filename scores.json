@@ -1,2 +1,26 @@
 [
+  {
+    "name": "Michelle",
+    "score1": 25,
+    "score2": 60,
+    "total": 94
+  },
+  {
+    "name": "Mike",
+    "score1": 25,
+    "score2": 41,
+    "total": 73
+  },
+  {
+    "name": "Evans",
+    "score1": 20,
+    "score2": 40,
+    "total": 66
+  },
+  {
+    "name": "Dennis",
+    "score1": 26,
+    "score2": 52,
+    "total": 86
+  }
 ]
