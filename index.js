@@ -3,9 +3,12 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express();
 const port = 3000;
+//const port = process.env.PORT || 3000;
 const jsonParser = bodyParser.json();
 const fileName = 'scores.json';
 const { calculateTotal, median } = require('./calculations');
+
+//console.log(`server listening on port ${port}`);
 
 // Load data from file
 let rawData = fs.readFileSync(fileName);
