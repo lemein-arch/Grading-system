@@ -1,9 +1,21 @@
 [
   {
+    "name": "Cynthia ",
+    "score1": 30,
+    "score2": 60,
+    "total": 100
+  },
+  {
     "name": "Michelle",
     "score1": 25,
     "score2": 60,
     "total": 94
+  },
+  {
+    "name": "Kevin",
+    "score1": 27,
+    "score2": 56,
+    "total": 92
   },
   {
     "name": "Dennis",
@@ -22,11 +34,5 @@
     "score1": 20,
     "score2": 40,
     "total": 66
-  },
-  {
-    "name": "Kevin",
-    "score1": 27,
-    "score2": 56,
-    "total": 92
   }
 ]
