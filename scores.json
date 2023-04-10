@@ -30,6 +30,12 @@
     "total": 86
   },
   {
+    "name": "Zack",
+    "score1": 23,
+    "score2": 43,
+    "total": 73
+  },
+  {
     "name": "Mike",
     "score1": 25,
     "score2": 41,
@@ -46,11 +52,5 @@
     "score1": 20,
     "score2": 40,
     "total": 66
-  },
-  {
-    "name": "Zack",
-    "score1": 23,
-    "score2": 43,
-    "total": 73
   }
 ]
