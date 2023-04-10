@@ -1,0 +1,22 @@
+name: Automated Test CI
+
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs: 
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    # install the dependencies
+    - name: install dependencies
+      run: npm ci 
+
+    # run the tests
+    - name: test
+      run: npm test
+    

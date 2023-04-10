@@ -1,6 +1,19 @@
-h1 {
+h1, h3 {
     font-family: 'Bahnschrift';
 }
 h4 {
     font-family: 'Courier New', Courier, monospace;
+}
+
+#table {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+#table2 {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 90px;
 }
