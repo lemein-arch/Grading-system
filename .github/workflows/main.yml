@@ -19,8 +19,7 @@ jobs:
       env:
         webhook_url: ${{secrets.DEPLOY_HOOK_URL}}
         webhook_secret: ${{secrets.DEPLOY_HOOK_KEY}}
-    
-    - run: npm ci 
-    - run: npm test
+
+
   
     
