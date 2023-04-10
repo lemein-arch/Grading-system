@@ -13,13 +13,6 @@ jobs:
     env:
       CI: true
     steps:
-    # cache the dependencies from any node_modules directory
-    - name: cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: '*/node_modules'
-        key: node_modules-${{ hashFiles('*/package-lock.json')}}
-
     # install the dependencies
     - name: install dependencies
       run: npm ci --ignore-scripts
