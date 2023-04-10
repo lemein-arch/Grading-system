@@ -3,7 +3,6 @@ var scoreOne;
 var scoreTwo;
 var total;
 
-
 async function fetchScores() {
     const url = '/scores';
     const options = {
@@ -71,7 +70,7 @@ async function addStudentScores() {
 function populateContent(rows) {
     var header = document.getElementById('head');
     var table = document.getElementById('content');
-    header.innerHTML = "<tr><th>#</th><th>Student Name</th><th>Quiz 1</th><th>Quiz 2</th><th>Total</th></tr>"
+    header.innerHTML = "<tr><th>#</th><th>Student Name</th><th>Quiz 1</th><th>Quiz 2</th><th>Total (Percentage)</th></tr>"
     var numID = 1;
     rows.forEach(row => {
         var tuple = document.createElement('tr');
