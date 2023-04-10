@@ -1,22 +1,17 @@
-name: Automated Test CI
-
-on: 
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs: 
-  name: Wait for Deploy
-  runs-on: ubuntu-latest
-  steps:
-    - name: Wait for Render Deployment
-      uses: bounceapp/render-action@0.6.0
-      with:
-        service-id: srv-cgprq1d269v5rj8ce1eg
-        retries: 20
-        wait: 18000
-        sleep: 30000
+name: Render
+on: [pull_request]:
+jobs:
+  deploy:
+    name: Wait for Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Render Deployment
+        uses: bounceapp/render-action@0.6.0
+        with:
+          service-id: srv-cgprq1d269v5rj8ce1eg
+          retries: 20
+          wait: 16000
+          sleep: 30000
 
     # install the dependencies
     - name: install dependencies
