@@ -20,9 +20,7 @@ jobs:
         webhook_url: ${{secrets.DEPLOY_HOOK_URL}}
         webhook_secret: ${{secrets.DEPLOY_HOOK_KEY}}
     
-     # run the tests
-    - name: UI and Unit tests
-      run: npm ci 
-      run: npm test
+    - run: npm ci 
+    - run: npm test
   
     
