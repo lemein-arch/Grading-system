@@ -1,25 +1,21 @@
-name: Render
-on:
+name: Automated Test CI
+
+on: 
   push:
-      branches: [ main ]
-    pull_request:
-      branches: [ main ]
-jobs:
-  deploy:
-    name: Wait for Deploy
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs: 
+  ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for Render Deployment
-        uses: bounceapp/render-action@0.6.0
-        with:
-          service-id: srv-cgprq1d269v5rj8ce1eg
-          retries: 20
-          wait: 16000
-          sleep: 30000
+    - uses: actions/checkout@v2
 
     # install the dependencies
     - name: install dependencies
       run: npm ci 
+
     # run the tests
     - name: test
       run: npm test

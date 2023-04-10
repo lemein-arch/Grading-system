@@ -10,7 +10,7 @@ test ('median test =4', () => {
     expect(median(testArray)).toBe(4);
 });
 
-// /*
+/*
 describe ('testing with puppeteer' , () =>{
     beforeAll(async () => {
         browser = await puppeteer.launch();
@@ -24,4 +24,4 @@ describe ('testing with puppeteer' , () =>{
         await browser.close();
     }, 70000);
 });
-// */
+*/
