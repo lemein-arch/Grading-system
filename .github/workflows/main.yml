@@ -21,11 +21,11 @@ jobs:
         webhook_secret: ${{secrets.DEPLOY_HOOK_KEY}}
   
     ci:
-    runs-on: ubuntu-20.04
-    container: lironavon/docker-puppeteer-container:14.16.0
-    env:
-      CI: true
-    steps:
+      runs-on: ubuntu-20.04
+      container: lironavon/docker-puppeteer-container:14.16.0
+      env:
+        CI: true
+      steps:
       # cache the dependencies from any node_modules directory
       - name: cache dependencies
         uses: actions/cache@v2
@@ -35,7 +35,7 @@ jobs:
       # install the dependencies
       - name: install dependencies
         run: npm ci --ignore-scripts
-      # run the tests
+        # run the tests
       - name: test
         run: npm test
     

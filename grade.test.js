@@ -18,7 +18,7 @@ describe ('testing with puppeteer' , () =>{
     });
 
     it('check title of page', async () => {
-        await page.goto("/");
+        await page.goto("http://localhost:3000/");
         const pageTitle = await page.title();
         expect(pageTitle).toEqual('Student Grading System');
         await browser.close();
