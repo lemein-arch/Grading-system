@@ -1,4 +1,3 @@
-const server = 'http://localhost:3000';
 var studentName;
 var scoreOne;
 var scoreTwo;
@@ -6,7 +5,7 @@ var total;
 
 
 async function fetchScores() {
-    const url = server + '/scores';
+    const url = '/scores';
     const options = {
         method: 'GET',
         headers: { 
@@ -19,7 +18,7 @@ async function fetchScores() {
 }
 
 async function fetchMedian() {
-    const url = server + '/median';
+    const url = '/median';
     const options = {
         method: 'GET',
         headers: {
@@ -33,7 +32,7 @@ async function fetchMedian() {
 }
 
 async function fetchAverage() {
-    const url = server + '/average';
+    const url = '/average';
     const options = {
         method: 'GET',
         headers: {
@@ -47,7 +46,7 @@ async function fetchAverage() {
 }
 
 async function addStudentScores() {
-    const url = server + '/process_scores';
+    const url = '/process_scores';
     const scores = {name: studentName, score1: scoreOne, score2: scoreTwo};
     const options = {
         method: 'POST',
