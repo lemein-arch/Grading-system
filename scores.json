@@ -18,6 +18,12 @@
     "total": 92
   },
   {
+    "name": "Collins",
+    "score1": 25,
+    "score2": 54,
+    "total": 87
+  },
+  {
     "name": "Dennis",
     "score1": 26,
     "score2": 52,
@@ -30,15 +36,21 @@
     "total": 73
   },
   {
+    "name": "Jane",
+    "score1": 18,
+    "score2": 44,
+    "total": 68
+  },
+  {
     "name": "Evans",
     "score1": 20,
     "score2": 40,
     "total": 66
   },
   {
-    "name": "Collins",
-    "score1": 25,
-    "score2": 54,
-    "total": 87
+    "name": "Zack",
+    "score1": 23,
+    "score2": 43,
+    "total": 73
   }
 ]
