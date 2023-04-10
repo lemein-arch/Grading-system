@@ -17,9 +17,9 @@ jobs:
     - name: cache dependencies
       uses: actions/cache@v2
       with:
-        path: '**/node_modules'
-        key: node_modules-${{ hashFiles('**/package-lock.json')}}
-        
+        path: '*/node_modules'
+        key: node_modules-${{ hashFiles('*/package-lock.json')}}
+
     # install the dependencies
     - name: install dependencies
       run: npm ci --ignore-scripts
