@@ -34,5 +34,11 @@
     "score1": 20,
     "score2": 40,
     "total": 66
+  },
+  {
+    "name": "Collins",
+    "score1": 25,
+    "score2": 54,
+    "total": 87
   }
 ]
