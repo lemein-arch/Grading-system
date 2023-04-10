@@ -19,33 +19,3 @@ jobs:
       env:
         webhook_url: ${{secrets.DEPLOY_HOOK_URL}}
         webhook_secret: ${{secrets.DEPLOY_HOOK_KEY}}
-
-
-  
-    name: Node . js CI
-
-on: 
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-    
-  jobs:
-build:
-
-runs on: ubuntu-latest
-
-
-steps:
-- uses: actions/checkout@v2
-- uses: bounceapp/render-action@0.60
-with:
-
-  render-token: ${{secrets.RENDER_API_KEY}}
-  github-token: ${{secrets.ACC_API_KEY}}
-  service-id: "srv-cg90ltg2qv259v98u1kg"
-  
-  retries: 20
-  wait: 16000
-  sleep: 30000
-
